@@ -13,7 +13,7 @@ namespace User_Registration_Regex
         public static string lastName = "^[A-Z]{1}[a-zA-Z]{2,}$";
         public static string eMail = @"^[a-z]{3,}([.]{1}[a-z]{2,})?@bl.co([.]{1}[a-z]{2})?$";
         public static string mobileNoFormat = @"^91[ ][5-9]{1}[0-9]{9}$";
-        public static string passwordFormat = @"^[1-9a-zA-Z]{1}[a-zA-Z0-9]{7,}";
+        public static string passwordFormat = @"^(?=.*[A-Z])[1-9a-zA-Z]{1}[a-zA-Z0-9]{7,}";
 
         public void ValidatePassword(string[] names)
         {
