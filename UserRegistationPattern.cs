@@ -12,6 +12,15 @@ namespace User_Registration_Regex
         public static string firstName = "^[A-Z]{1}[a-zA-Z]{2,}$";
         public static string lastName = "^[A-Z]{1}[a-zA-Z]{2,}$";
         public static string eMail = @"^[a-z]{3,}([.]{1}[a-z]{2,})?@bl.co([.]{1}[a-z]{2})?$";
+        public static string mobileNoFormat = @"^91[ ][5-9]{1}[0-9]{9}$";
+        public void ValidateMobileNo(string[] names)
+        {
+            foreach (string n in names)
+            {
+                string result = Regex.IsMatch(n, mobileNoFormat) ? $"{n} entered is valid" : $"{n} entered is Invalid";
+                Console.WriteLine(result);
+            }
+        }
         public void ValidateeMail(string[] names)
         {
             foreach (string n in names)
