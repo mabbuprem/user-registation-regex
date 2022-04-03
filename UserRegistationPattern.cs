@@ -13,6 +13,16 @@ namespace User_Registration_Regex
         public static string lastName = "^[A-Z]{1}[a-zA-Z]{2,}$";
         public static string eMail = @"^[a-z]{3,}([.]{1}[a-z]{2,})?@bl.co([.]{1}[a-z]{2})?$";
         public static string mobileNoFormat = @"^91[ ][5-9]{1}[0-9]{9}$";
+        public static string passwordFormat = @"^[1-9a-zA-Z]{1}[a-zA-Z0-9]{7,}";
+
+        public void ValidatePassword(string[] names)
+        {
+            foreach (string n in names)
+            {
+                string result = Regex.IsMatch(n, passwordFormat) ? $"{n} entered is valid" : $"{n} entered is Invalid";
+                Console.WriteLine(result);
+            }
+        }
         public void ValidateMobileNo(string[] names)
         {
             foreach (string n in names)
