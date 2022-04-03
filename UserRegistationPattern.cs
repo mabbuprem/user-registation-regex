@@ -11,12 +11,20 @@ namespace User_Registration_Regex
     {
         public static string firstName = "^[A-Z]{1}[a-zA-Z]{2,}$";
         public static string lastName = "^[A-Z]{1}[a-zA-Z]{2,}$";
+        public static string eMail = @"^[a-z]{3,}([.]{1}[a-z]{2,})?@bl.co([.]{1}[a-z]{2})?$";
+        public void ValidateeMail(string[] names)
+        {
+            foreach (string n in names)
+            {
+                string result = Regex.IsMatch(n, eMail) ? $"{n} entered is valid" : $"{n} entered is Invalid";
+                Console.WriteLine(result);
+            }
+        }
         public void ValidatelastName(string[] names)
         {
             foreach (string n in names)
             {
                 string result = Regex.IsMatch(n, lastName) ? $"{n} entered is valid" : $"{n} entered is Invalid";
-
                 Console.WriteLine(result);
             }
         }
@@ -25,7 +33,6 @@ namespace User_Registration_Regex
             foreach (string n in names)
             {
                 string result = Regex.IsMatch(n, firstName) ? $"{n} entered is valid" : $"{n} entered is Invalid";
-
                 Console.WriteLine(result);
             }
         }
