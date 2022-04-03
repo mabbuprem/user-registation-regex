@@ -14,6 +14,7 @@ namespace User_Registration_Regex
         public static string eMail = @"^[a-z]{3,}([.]{1}[a-z]{2,})?@bl.co([.]{1}[a-z]{2})?$";
         public static string mobileNoFormat = @"^91[ ][5-9]{1}[0-9]{9}$";
         public static string passwordFormat = "^(?=.*[!@#$%^&*])(?=.*[A-Z])(?=.*[0-9])[a-zA-Z1-9]{1}[a-zA-Z0-9]{7,}";
+        public static string eMail2 = "^[a-z]{3,}(([.|+]{1})?([-]{1})?[0-9]{1,})?@[a-z0-9]{1,}.[a-z]{3}(.[a-z]{2,4})?$";
         public void ValidatePassword(string[] names)
         {
             foreach (string n in names)
@@ -34,7 +35,7 @@ namespace User_Registration_Regex
         {
             foreach (string n in names)
             {
-                string result = Regex.IsMatch(n, eMail) ? $"{n} entered is valid" : $"{n} entered is Invalid";
+                string result = Regex.IsMatch(n, eMail2) ? $"{n} entered is valid" : $"{n} entered is Invalid";
                 Console.WriteLine(result);
             }
         }
